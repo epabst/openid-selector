@@ -43,19 +43,17 @@ var providers_small = {
 	winliveid : {
 		name : 'Live',
 		scheme : 'live',
-		// label : 'Enter your Windows Live username.',
 		url : null
 	},
 	mailru : {
 		name : 'MailRU',
 		scheme : 'openid',
-		// label : 'Your MailRU username',
 		url : 'http://openid.mail.ru/'
 	},
 	verisign : {
 		name : 'Verisign',
 		scheme : 'openid',
-		label : 'Your Verisign username',
+		label : 'Enter your Verisign username',
 		url : 'http://{username}.pip.verisignlabs.com/'
 	},
 	myopenid : {
@@ -85,45 +83,45 @@ var providers_small = {
 	wordpress : {
 		name : 'Wordpress',
 		scheme : 'openid',
-		label : 'Enter your Wordpress.com username.',
+		label : 'Enter your Wordpress username.',
 		url : 'http://{username}.wordpress.com/'
 	},
 	blogger : {
 		name : 'Blogger',
 		scheme : 'openid',
-		label : 'Your Blogger account',
+		label : 'Enter your Blogger account',
 		url : 'http://{username}.blogspot.com/'
 	},
 	vidoop : {
 		name : 'Vidoop',
 		scheme : 'openid',
-		label : 'Your Vidoop username',
+		label : 'Enter your Vidoop username',
 		url : 'http://{username}.myvidoop.com/'
 	},
 	launchpad : {
 		name : 'Launchpad',
 		scheme : 'openid',
-		label : 'Your Launchpad username',
+		label : 'Enter your Launchpad username',
 		url : 'https://launchpad.net/~{username}'
 	},
 	/*
         github : {
 		name : 'Github',
 		scheme : 'github',
-		// label : 'Your Github username',
+		// label : 'Enter your Github username',
 		url : null
 	},
 	bitbucket : {
 		name : 'Bitbucket',
 		scheme : 'bitbucket',
-		// label : 'Your BitBucket username',
+		// label : 'Enter your BitBucket username',
 		url : null
 	},
         */
 	claimid : {
 		name : 'ClaimID',
 		scheme : 'openid',
-		label : 'Your ClaimID username',
+		label : 'Enter your ClaimID username',
 		url : 'http://claimid.com/{username}'
 	},
 	clickpass : {
@@ -153,7 +151,7 @@ var providers_small = {
 	openid : {
 		name : 'OpenID',
 		scheme : 'openid',
-		label : 'Enter your OpenID.',
+		label : 'Enter your OpenID to any provider',
 		url : null
 	},
 
