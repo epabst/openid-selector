@@ -9,7 +9,6 @@ var providers_large = {
 	google : {
 		name : 'Google',
 		scheme : 'google_oauth2',
-		// url : 'https://www.google.com/accounts/o8/id'
 		url : null
 	},
 	yahoo : {
@@ -17,22 +16,19 @@ var providers_large = {
 		scheme : 'yahoo',
 		url : 'http://me.yahoo.com/'
 	},
-	facebook : {
-		name : 'Facebook',
-		scheme : 'facebook',
-		// label : 'Enter your Facebook profile.',
+	linkedin : {
+		name : 'LinkedIn',
+		scheme : 'linkedin',
 		url : null
 	},
 	twitter : {
 		name : 'Twitter',
 		scheme : 'twitter',
-		// label : 'Enter your Twitter account.',
 		url : null
 	},
-	openid : {
-		name : 'OpenID',
-		scheme : 'openid',
-		label : 'Enter your OpenID.',
+	facebook : {
+		name : 'Facebook',
+		scheme : 'facebook',
 		url : null
 	}
 };
@@ -150,10 +146,16 @@ var providers_small = {
         */
 	google_profile : {
 		name : 'Google Profile',
-		scheme : 'openid',
+		scheme : 'google', //-- google_hybrid
 		label : 'Enter your Google Profile username',
 		url : 'http://www.google.com/profiles/{username}'
-	}
+	},
+	openid : {
+		name : 'OpenID',
+		scheme : 'openid',
+		label : 'Enter your OpenID.',
+		url : null
+	},
 
 };
 
