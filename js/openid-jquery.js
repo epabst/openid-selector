@@ -26,6 +26,7 @@ openid = {
 	image_title : '{provider}', // for image title
 
 	input_id : null,
+	action : null,
 	provider_url : null,
 	provider_id : null,
 
@@ -92,6 +93,12 @@ openid = {
 		this.setCookie(box_id);
 		this.provider_id = box_id;
 		this.provider_url = provider.url;
+		// obtain action
+		if (provider.action) {
+			this.action = provider.action;
+		} else {
+			this.action = 'openid';
+		}
 		// prompt user for input?
 		if (provider.label) {
 			this.useInputBox(provider);
@@ -110,6 +117,7 @@ openid = {
 	 */
 	submit : function() {
 		var url = openid.provider_url;
+		var action = openid.action;
 		if (url) {
 			url = url.replace('{username}', $('#openid_username').val());
 			openid.setOpenIdUrl(url);
@@ -118,6 +126,7 @@ openid = {
 			alert(openid.demo_text + "\r\n" + document.getElementById(openid.input_id).value);
 			return false;
 		}
+		openid.setAction(action);
 		if (url && url.indexOf("javascript:") == 0) {
 			url = url.substr("javascript:".length);
 			eval(url);
@@ -135,6 +144,18 @@ openid = {
 			hidden.value = url;
 		} else {
 			$('#openid_form').append('<input type="hidden" id="' + this.input_id + '" name="' + this.input_id + '" value="' + url + '"/>');
+		}
+	},
+
+	/**
+	 * @return {Void}
+	 */
+	setAction : function(action) {
+		var hidden = document.getElementById("action");
+		if (hidden != null) {
+			hidden.value = action;
+		} else {
+			$('#openid_form').append('<input type="hidden" id="action" name="action" value="' + action + '"/>');
 		}
 	},
 
