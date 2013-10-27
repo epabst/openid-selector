@@ -8,27 +8,27 @@
 var providers_large = {
 	google : {
 		name : 'Google',
-		action : 'google_oauth2',
+		method : 'google_oauth2',
 		url : null
 	},
 	yahoo : {
 		name : 'Yahoo',
-		action : 'yahoo',
+		method : 'yahoo',
 		url : 'http://me.yahoo.com/'
 	},
 	linkedin : {
 		name : 'LinkedIn',
-		action : 'linkedin',
+		method : 'linkedin',
 		url : null
 	},
 	twitter : {
 		name : 'Twitter',
-		action : 'twitter',
+		method : 'twitter',
 		url : null
 	},
 	facebook : {
 		name : 'Facebook',
-		action : 'facebook',
+		method : 'facebook',
 		url : null
 	}
 };
@@ -41,7 +41,7 @@ var providers_small = {
 	},
 	winliveid : {
 		name : 'Live',
-		action : 'live',
+		method : 'live',
 		url : null
 	},
 	mailru : {
@@ -96,13 +96,13 @@ var providers_small = {
 	/*
         github : {
 		name : 'Github',
-		action : 'github',
+		method : 'github',
 		// label : 'Enter your Github username',
 		url : null
 	},
 	bitbucket : {
 		name : 'Bitbucket',
-		action : 'bitbucket',
+		method : 'bitbucket',
 		// label : 'Enter your BitBucket username',
 		url : null
 	},
@@ -129,7 +129,7 @@ var providers_small = {
         */
 	google_profile : {
 		name : 'Google Profile',
-		action : 'google', //-- google_hybrid
+		method : 'google', //-- google_hybrid
 		label : 'Enter your Google Profile username',
 		url : 'http://www.google.com/profiles/{username}'
 	},
