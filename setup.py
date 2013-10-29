@@ -1,5 +1,5 @@
 import os
-from setuptools import setup
+from distutils.core import setup
 
 
 version = '0.1'
@@ -19,9 +19,11 @@ long_description = (
 )
 
 
-def staging(pkg, entries, init=True):
+def staging(pkg, entries, init=True, rmdir=True):
     import os, shutil
     find_packages = []
+    if rmdir:
+        shutil.rmtree(pkg)
     os.mkdir(pkg)
     if init:
         open('/'.join([pkg, '__init__.py']), 'a').close()
