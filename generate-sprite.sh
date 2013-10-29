@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/bash -x
 # quick hack to replicate the functionality of generate-sprite.js on a linux machine.
 # released under the BSD license below
 #

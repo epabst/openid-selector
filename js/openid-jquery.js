@@ -26,6 +26,7 @@ openid = {
 	image_title : '{provider}', // for image title
 
 	input_id : null,
+	method : null,
 	provider_url : null,
 	provider_id : null,
 
@@ -92,6 +93,12 @@ openid = {
 		this.setCookie(box_id);
 		this.provider_id = box_id;
 		this.provider_url = provider.url;
+		// obtain method
+		if (provider.method) {
+			this.method = provider.method;
+		} else {
+			this.method = 'openid';
+		}
 		// prompt user for input?
 		if (provider.label) {
 			this.useInputBox(provider);
@@ -110,6 +117,8 @@ openid = {
 	 */
 	submit : function() {
 		var url = openid.provider_url;
+		var provider = openid.provider_id;
+		var method = openid.method;
 		if (url) {
 			url = url.replace('{username}', $('#openid_username').val());
 			openid.setOpenIdUrl(url);
@@ -118,6 +127,8 @@ openid = {
 			alert(openid.demo_text + "\r\n" + document.getElementById(openid.input_id).value);
 			return false;
 		}
+		openid.setProvider(provider);
+		openid.setMethod(method);
 		if (url && url.indexOf("javascript:") == 0) {
 			url = url.substr("javascript:".length);
 			eval(url);
@@ -135,6 +146,30 @@ openid = {
 			hidden.value = url;
 		} else {
 			$('#openid_form').append('<input type="hidden" id="' + this.input_id + '" name="' + this.input_id + '" value="' + url + '"/>');
+		}
+	},
+
+	/**
+	 * @return {Void}
+	 */
+	setProvider : function(provider) {
+		var hidden = document.getElementById("provider");
+		if (hidden != null) {
+			hidden.value = provider;
+		} else {
+			$('#openid_form').append('<input type="hidden" id="provider" name="provider" value="' + provider + '"/>');
+		}
+	},
+
+	/**
+	 * @return {Void}
+	 */
+	setMethod : function(method) {
+		var hidden = document.getElementById("method");
+		if (hidden != null) {
+			hidden.value = method;
+		} else {
+			$('#openid_form').append('<input type="hidden" id="method" name="method" value="' + method + '"/>');
 		}
 	},
 
