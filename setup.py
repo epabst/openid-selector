@@ -22,22 +22,27 @@ long_description = (
 def staging(pkg, entries, init=True, rmdir=True):
     import os, shutil
     find_packages = []
-    if rmdir:
-        shutil.rmtree(pkg)
-    os.mkdir(pkg)
-    if init:
-        open('/'.join([pkg, '__init__.py']), 'a').close()
+    if os.path.isdir(pkg):
+        print('Staging folder {} already exists. Skipping...'.format(pkg))
         find_packages.append(pkg)
-    for entry in entries:
-        (from_dir, to_dir, files) = entry
-        os.mkdir('/'.join([pkg, to_dir]))
-        if init:
-            open('/'.join([pkg, to_dir, '__init__.py']), 'a').close()
+        for entry in entries:
+            (from_dir, to_dir, files) = entry
             find_packages.append('.'.join([pkg, to_dir]))
-        for file in files:
-            src = '/'.join([from_dir, file])
-            dst = '/'.join([pkg, to_dir, file])
-            shutil.copyfile(src, dst)
+    else:
+        os.mkdir(pkg)
+        if init:
+            open('/'.join([pkg, '__init__.py']), 'a').close()
+            find_packages.append(pkg)
+        for entry in entries:
+            (from_dir, to_dir, files) = entry
+            os.mkdir('/'.join([pkg, to_dir]))
+            if init:
+                open('/'.join([pkg, to_dir, '__init__.py']), 'a').close()
+                find_packages.append('.'.join([pkg, to_dir]))
+            for file in files:
+                src = '/'.join([from_dir, file])
+                dst = '/'.join([pkg, to_dir, file])
+                shutil.copyfile(src, dst)
     return find_packages
 
 
