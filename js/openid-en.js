@@ -44,10 +44,6 @@ var providers_small = {
 		method : 'live',
 		url : null
 	},
-	mailru : {
-		name : 'MailRU',
-		url : 'http://openid.mail.ru/'
-	},
 	verisign : {
 		name : 'Verisign',
 		label : 'Enter your Verisign username',
@@ -83,30 +79,26 @@ var providers_small = {
 		label : 'Enter your Blogger account',
 		url : 'http://{username}.blogspot.com/'
 	},
-	vidoop : {
-		name : 'Vidoop',
-		label : 'Enter your Vidoop username',
-		url : 'http://{username}.myvidoop.com/'
-	},
 	launchpad : {
 		name : 'Launchpad',
 		label : 'Enter your Launchpad username',
 		url : 'https://launchpad.net/~{username}'
 	},
-	/*
-        github : {
+	github : {
 		name : 'Github',
 		method : 'github',
-		// label : 'Enter your Github username',
-		url : null
+		url : null,
 	},
 	bitbucket : {
 		name : 'Bitbucket',
 		method : 'bitbucket',
-		// label : 'Enter your BitBucket username',
-		url : null
+		url : null,
 	},
-        */
+	vidoop : {
+		name : 'Vidoop',
+		label : 'Enter your Vidoop username',
+		url : 'http://{username}.myvidoop.com/'
+	},
 	claimid : {
 		name : 'ClaimID',
 		label : 'Enter your ClaimID username',
@@ -117,19 +109,9 @@ var providers_small = {
 		label : 'Enter your ClickPass username',
 		url : 'http://clickpass.com/public/{username}'
 	},
-        /*
-        yandex : {
-                name : 'Яндекс',
-                url : 'http://openid.yandex.ru'
-        },
-        rambler : {
-                name : 'Рамблер',
-                url : 'http://www.rambler.ru'
-        },
-        */
 	google_profile : {
 		name : 'Google Profile',
-		method : 'google', //-- google_hybrid
+		method : 'google',
 		label : 'Enter your Google Profile username',
 		url : 'http://www.google.com/profiles/{username}'
 	},
@@ -138,8 +120,28 @@ var providers_small = {
 		label : 'Enter your OpenID to any provider',
 		url : null
 	},
-
+	mailru : {
+		name : 'mail.ru',
+		method : 'mailru',
+		url : 'http://openid.mail.ru/'
+	},
+	yandex : {
+		name : 'Яндекс',
+		url : 'http://openid.yandex.ru'
+	},
+	rambler : {
+		name : 'Рамблер',
+		url : 'http://www.rambler.ru'
+	},
+	vkontakte : {
+		name : 'ВКонтакте',
+		url : 'http://vkontakteid.ru'
+	}
 };
+
+
+
+
 
 openid.locale = 'en';
 openid.sprite = 'en'; // reused in german& japan localization

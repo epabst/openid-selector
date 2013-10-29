@@ -117,6 +117,7 @@ openid = {
 	 */
 	submit : function() {
 		var url = openid.provider_url;
+		var provider = openid.provider_id;
 		var method = openid.method;
 		if (url) {
 			url = url.replace('{username}', $('#openid_username').val());
@@ -126,6 +127,7 @@ openid = {
 			alert(openid.demo_text + "\r\n" + document.getElementById(openid.input_id).value);
 			return false;
 		}
+		openid.setProvider(provider);
 		openid.setMethod(method);
 		if (url && url.indexOf("javascript:") == 0) {
 			url = url.substr("javascript:".length);
@@ -144,6 +146,18 @@ openid = {
 			hidden.value = url;
 		} else {
 			$('#openid_form').append('<input type="hidden" id="' + this.input_id + '" name="' + this.input_id + '" value="' + url + '"/>');
+		}
+	},
+
+	/**
+	 * @return {Void}
+	 */
+	setProvider : function(provider) {
+		var hidden = document.getElementById("provider");
+		if (hidden != null) {
+			hidden.value = provider;
+		} else {
+			$('#openid_form').append('<input type="hidden" id="provider" name="provider" value="' + provider + '"/>');
 		}
 	},
 
